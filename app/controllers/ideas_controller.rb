@@ -10,6 +10,9 @@ class IdeasController < ApplicationController
   # GET /ideas/1
   # GET /ideas/1.json
   def show
+    @comments = @idea.comments.all
+    # (line 15) for the current idea, there is a comment, and we want to build a new one:
+    @comment = @idea.comments.build
   end
 
   # GET /ideas/new
